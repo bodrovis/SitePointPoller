@@ -10,6 +10,8 @@ gem 'omniauth-facebook'
 gem 'bootstrap-sass'
 gem 'jquery-turbolinks'
 
+gem "cocoon"
+
 group :development do
   gem 'sqlite3'
   gem 'annotate'

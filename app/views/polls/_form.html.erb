@@ -1,0 +1,23 @@
+<%= form_for @poll do |f| %>
+  <%= render 'shared/errors', object: @poll %>
+
+  <div class="form-group">
+    <%= f.label :topic %>
+    <%= f.text_area :topic, rows: 3, required: true, class: 'form-control' %>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">Options</div>
+    <div class="panel-body">
+      <%= f.fields_for :vote_options do |options_form| %>
+        <%= render 'vote_option_fields', f: options_form %>
+      <% end %>
+
+      <div class="links">
+        <%= link_to_add_association 'add option', f, :vote_options %>
+      </div>
+    </div>
+  </div>
+
+  <%= f.submit 'Create', class: 'btn btn-primary btn-lg' %>
+<% end %>

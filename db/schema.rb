@@ -11,13 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140918135323) do
+ActiveRecord::Schema.define(version: 20140918150906) do
 
   create_table "polls", force: true do |t|
     t.text     "topic"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "image_url"
+    t.string   "uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["uid"], name: "index_users_on_uid"
 
   create_table "vote_options", force: true do |t|
     t.string   "title"
