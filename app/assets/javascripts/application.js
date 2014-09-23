@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require jquery.turbolinks
 //= require cocoon
+//= require jquery.validate
+//= require additional-methods
 //= require turbolinks

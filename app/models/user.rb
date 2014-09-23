@@ -11,6 +11,9 @@
 #
 
 class User < ActiveRecord::Base
+  has_many :votes
+  has_many :vote_options, through: :votes
+
   class << self
     def from_omniauth(auth)
       uid = auth.uid
@@ -21,5 +24,9 @@ class User < ActiveRecord::Base
       user.save!
       user
     end
+  end
+
+  def voted_for?(poll)
+    vote_options.any? {|v| v.poll == poll }
   end
 end

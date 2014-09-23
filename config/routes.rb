@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get '/auth/failure', to: 'sessions#auth_fail'
   get '/sign_out', to: 'sessions#destroy', as: :sign_out
 
+  resources :votes, only: [:create]
+  resources :users, only: [:show]
   resources :polls
   root to: 'polls#index'
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,3 +1,28 @@
 <% content_for(:page_header) {"Share your opinion"} %>
 
 <h2><%= @poll.topic %></h2>
+
+<%= render 'voting_form' %>
+
+<script data-turbolinks-track="true">
+  $(document).ready(function() {
+    var voting_form = $('#voting_form');
+    voting_form.validate({
+      focusInvalid: false,
+      errorClass: 'alert alert-warning',
+      errorElement: "div",
+      errorPlacement: function(error, element) { voting_form.before(error); },
+      rules: {
+        'vote_option[id]': {
+          required: true
+        }
+      },
+      messages: {
+        'vote_option[id]': {
+          required: "Please select one of the options."
+        }
+      }
+
+    });
+  });
+</script>
