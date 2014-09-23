@@ -12,6 +12,8 @@ gem 'jquery-turbolinks'
 
 gem "cocoon"
 
+gem 'counter_culture', '~> 0.1.23'
+
 group :development do
   gem 'sqlite3'
   gem 'annotate'

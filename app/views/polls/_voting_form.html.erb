@@ -1,4 +1,3 @@
-VOTED: <%= current_user.voted_for?(@poll) %>
 <%= form_tag votes_path, method: :post, remote: true, id: 'voting_form' do %>
   <%= hidden_field_tag 'poll[id]', @poll.id %>
 
