@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find_by_id(params[:id])
+    @user = User.includes(:vote_options).find_by_id(params[:id])
   end
 end
