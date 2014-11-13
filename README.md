@@ -1,4 +1,4 @@
-Source code for the []() article on
+Source code for the [Polling Your Users with Rails](http://www.sitepoint.com/polling-users-rails/) article on
 SitePoint,
 created by Ilya Bodrov ([radiant-wind.com](http://radiant-wind.com)).
 
