@@ -15,7 +15,5 @@ class VoteOption < ActiveRecord::Base
   has_many :votes, dependent: :destroy
   has_many :users, through: :votes
 
-  default_scope { order('votes_count DESC') }
-
   validates :title, presence: true
 end
