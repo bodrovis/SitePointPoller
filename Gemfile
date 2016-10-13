@@ -14,7 +14,7 @@ gem "cocoon"
 
 gem 'counter_culture', '~> 0.1.23'
 
-gem 'recaptcha'
+gem 'recaptcha', require: "recaptcha/rails"
 
 group :development do
   gem 'sqlite3'
