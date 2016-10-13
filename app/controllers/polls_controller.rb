@@ -18,7 +18,7 @@ class PollsController < ApplicationController
 
   def update
     @poll = Poll.find_by_id(params[:id])
-    if @poll.update_attributes(poll_params)
+    if verify_recaptcha(model: @poll) && @poll.update_attributes(poll_params)
       flash[:success] = 'Poll was updated!'
       redirect_to polls_path
     else
@@ -28,7 +28,7 @@ class PollsController < ApplicationController
 
   def create
     @poll = Poll.new(poll_params)
-    if @poll.save
+    if verify_recaptcha(model: @poll) && @poll.save
       flash[:success] = 'Poll was created!'
       redirect_to polls_path
     else

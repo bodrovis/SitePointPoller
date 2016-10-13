@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.2.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.7'
+gem 'rails', '4.1.16'
 gem 'thin'
 
 gem 'omniauth-facebook'
@@ -13,6 +13,8 @@ gem 'jquery-turbolinks'
 gem "cocoon"
 
 gem 'counter_culture', '~> 0.1.23'
+
+gem 'recaptcha'
 
 group :development do
   gem 'sqlite3'
